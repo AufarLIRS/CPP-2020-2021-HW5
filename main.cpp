@@ -1,9 +1,24 @@
 #include <iostream>
-
-using namespace std;
+#include "number_1.h"
+#include "number_2.h"
+#include "number_3.h"
+#include "getarray.h"
 
 int main()
 {
-    cout << "Hello World!" << endl;
-    return 0;
+  int n = 10;
+  int mas[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+  std::cout << "Array = ";
+  GetArray::getArray(mas, n);
+  std::cout << std::endl;
+
+  // Results.
+  std::cout << "1. Minimal element in array = " << Number_1::minElement(mas, n) << std::endl;
+  std::cout << "2. Minimal element in array = " << Number_2::minElement(&mas[0], &mas[n - 1]) << std::endl;
+
+  Number_3::rotate(&mas[0], &mas[n - 1]);
+  std::cout << "3. Reverse array = ";
+  GetArray::getArray(mas, n);
+  return 0;
 }
