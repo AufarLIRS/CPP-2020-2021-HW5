@@ -4,4 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        minElement1.cpp \
+        minElement2.cpp \
+        rotate.cpp
+
+HEADERS += \
+    minElement1.h \
+    minElement2.h \
+    rotate.h
