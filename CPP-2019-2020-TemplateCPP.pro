@@ -4,4 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        minelement.cpp \
+        minelementtask2.cpp \
+        minelementtask3.cpp
+
+HEADERS += \
+    minelement.h \
+    minelementtask2.h \
+    minelementtask3.h
