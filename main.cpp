@@ -2,7 +2,7 @@
 #include "number_1.h"
 #include "number_2.h"
 #include "number_3.h"
-#include "getarray.h"
+#include "printArray.h"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
   int mas[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
   std::cout << "Array = ";
-  GetArray::getArray(mas, n);
+  PrintArray::printArray(mas, n);
   std::cout << std::endl;
 
   // Results.
@@ -19,6 +19,6 @@ int main()
 
   Number_3::rotate(&mas[0], &mas[n - 1]);
   std::cout << "3. Reverse array = ";
-  GetArray::getArray(mas, n);
+  PrintArray::printArray(mas, n);
   return 0;
 }
