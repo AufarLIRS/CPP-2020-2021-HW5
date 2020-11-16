@@ -13,6 +13,7 @@ int main()
         std::cout << array[i] << " ";
     }
     std::cout << endl;
+
     std::cout << MinElement::searchElement(array, 5) << std::endl;
     std::cout << MinElementTask2::searchElement(&array[0], &array[4]) << std::endl;
     //cout << "Hello World!" << endl;
