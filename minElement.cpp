@@ -3,15 +3,15 @@
 int minElement(int* array, int size)
 {
   int i = 0;
-  long long min = __INT_MAX__;
-  while (*array != '\0' && i < size)
+  int min = *array;
+  while (i < size)
   {
-    if (*array < min)
+    if (*array <= min)
       min = *array;
     array++;
     i++;
   }
-  if (min != __INT_MAX__)
+  if (min != 0)
     return (min);
   return (0);
 }
