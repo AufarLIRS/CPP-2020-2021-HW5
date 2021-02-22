@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,18 +16,25 @@ int minElement (int* array, int size)
     return (min);
 }
 
-void rotate (int* first_elem, int* last_elem)
+void rotate (int *first_elem, int *last_elem)
 {
-    int k;
+    std::vector<int> buff;
+    int *p_fe = first_elem;
+    int i;
 
+    while (p_fe != last_elem)
+    {
+        buff.push_back(*p_fe);
+        p_fe++;
+    }
+    buff.push_back(*last_elem);
+    i = buff.size() - 1;
     while (first_elem != last_elem)
     {
-        k = *first_elem;
-        *first_elem = *last_elem;
-        *last_elem = k;
+        *first_elem = buff[i--];
         first_elem++;
-        last_elem--;
     }
+    *first_elem = buff[i];
 }
 
 int minElement (int* first_elem, int* last_elem)
@@ -44,15 +52,17 @@ int minElement (int* first_elem, int* last_elem)
 
 int main()
 {
-    int array[3];
-    array[0] = 3;
+    int *array;
+    array = (int *)malloc(4 * sizeof(int));
+    array[0] = 1;
     array[1] = 2;
-    array[2] = 4;
+    array[2] = 3;
+    array[3] = 4;
 
-    printf("%d\n", minElement(array, 3));
-    printf("%d\n", minElement(array, array + 2));
-    rotate(array, array + 2);
-    for (int i = 0; i < 3; i++)
+//    printf("%d\n", minElement(array, 3));
+//    printf("%d\n", minElement(array, array + 2));
+    rotate(array, array + 3);
+    for (int i = 0; i < 4; i++)
         printf("%d ", array[i]);
 
     return 0;
